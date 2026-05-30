@@ -1,3 +1,4 @@
-# <u>1: Proofs</u>
-Review of CSC165 and early CSC236.
-# <u>2: Sets</u>
+# <u>3: Set Theory</u>
+A
+# <u>7: Relations and Partitions</u>
+A
