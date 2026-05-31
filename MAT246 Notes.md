@@ -1,5 +1,5 @@
 # <u>3: Set Theory</u>
-- A set is a collection of **unordered**, **distinct** objects called elements
+A set is a collection of **unordered**, **distinct** objects called elements
 - Operators on sets:
 	- $|A|$, returns the size of the set
 	- $x∈A$, returns True when is a **member** of set $A$
@@ -14,12 +14,13 @@
 	- $A∩B$, returns the set of all elements that are in $A$ and $B$, this is called the **intersection**
 		- $\{x : x∈A∧x∈B\}$
 		- Note the intersection is distributive over unions, $A\cap (B\cup C)=(A\cap B)\cup(A\cap C)$, and commutative and associative with itself
-	- $A×B$, returns the set of all ordered pairs of elements in $A$ and $B$, this is called the **Cartesian product**
+	- $A×B$, returns the set of all **ordered pairs** of elements in $A$ then $B$, this is the **cartesian product**
 		- $\{(a,b) : a∈A∧b∈B\}$
 		- $|A\times B|=|A||B|$, given that the sets are finite
-		- $A\subseteq C\wedge B\subseteq D\implies A\times B\subseteq C\times D$
+			- If either or both sets are infinite, then $|A\times B|=\infty$
 		- $\emptyset \times A=A\times \emptyset=\emptyset$
 			- Note the product is **not commutative** otherwise; $A\times B\neq B \times A$ given $A\neq B$
+		- $A\subseteq C\wedge B\subseteq D\implies A\times B\subseteq C\times D$
 	- $A\backslash B$, returns the set of all elements that are in $A$ but not $B$, this is called the **set difference**
 		- $\{x : x∈A∧x∉B\}$
 	- $A^c$, returns the set of all elements that are in the universe of discourse but not in $A$; this called the **complement**, which is equivalent to the set difference $U\backslash A$, and thus DeMorgan's Law for sets:
@@ -44,4 +45,40 @@
 	- **Axiom of Choice:** for any arbitrary indexing set $N$ and every indexed collection of nonempty sets $\{ A_{n} \}_{n\in N}$, there exists an indexed collection of elements $\{ a_{n}\}_{n\in N}$ where $a_{n}\in A_{n}$ for each $n\in N$
 		- This axiom guarantees the existence of mathematical objects that are obtained by a sequence of choices (in both finite or infinite cases)
 # <u>7: Relations and Partitions</u>
-A
+For arbitrary sets $A,B$, a **relation** $R$ from $A$ to $B$ is a subset of their cartesian product; $R\subseteq A\times B$
+- Note, the contents of the set are what defines a relation; the description of the relation is not!
+- For $(a,b)\in R$, we say $a$ and $b$ are **related** or write shorthand $aRb$
+- From the properties of cartesian products and ordered pairs, we have $aRb\centernot\implies bRA$
+- Since $\emptyset \subseteq A\times A$, then we always have $\emptyset$ as the **empty relation** on $A$
+- These concepts can be extended to any **arity**; in the common case of a relation where all $n$ sets are the same set $A$, we say the relation is an $n$-ary relation **on** $A$
+	- However, we will almost always study **binary** relations (ie. ordered pairs between one or two sets)
+
+For a relation $R$ on a set $A$, the relation is:
+- **Reflexive**: if $\forall a\in A,aRa$ 
+- **Symmetric:** if $\forall a,b\in A,aRb\implies bRa$
+- **Transitive:** if $\forall a,b,c\in A,aRb\wedge bRc\implies aRc$
+Note, **reflexivity is not defined** for relations between non-equal sets (and thus neither is equivalence; more on this when equivalence relations are introduced)
+
+Consider some common examples:
+- $\leq$ on $\mathbb{R}$ is reflexive and transitive, but not symmetric
+- $<$ on $\mathbb{R}$ is not reflexive nor symmetric, but it is transitive
+- Relations about the elements having some commonality are generally symmetric
+- Relations about ordering, such as ancestry, are generally transitive
+- For a set $S$, the relation $\subseteq$ on $\mathcal{P}(S)$ is reflexive and transitive, but not symmetric
+- Every relation on the empty set is vacuously reflexive, symmetric, and transitive
+
+Relations that **satisfy all three properties** of reflexivity, symmetry, and transitivity are called **equivalence relations**
+- For an equivalence relation $\sim$ on a set $A$ and each $a\in A$, we refer to the **set of elements related to** $a$ by $\sim$ as the **equivalence class** of $a$, shorthanded as $[a]_{\sim}$
+	- $\forall a,b\in A,[a]_{\sim}=[b]_{\sim}\iff a\sim b$  
+	- $\bigcup_{a\in A}[a]_{\sim}=A$
+	- $\forall a,b\in A,([a]_{\sim}=[b]_{\sim})\vee ([a]_{\sim}\cap[b]_{\sim}=\emptyset)$
+- The $a$ in $[a]_{\sim}$ is the **representative** of the equivalence class; from the theorems above we have that any element of an equivalence class can be used as its representative!
+- The theorems above also imply that an equivalence relation $\sim$ on set $A$ breaks the entirety of $A$ up into pairwise disjoint subsets (where each subset is an equivalence class)
+	- This is called a **partition**; a collection $S$ of subsets of $A$ such that:
+		- $\forall X\in S,X\neq \emptyset$
+		- $\forall X,Y\in S,X\neq Y\implies X\cap Y=\emptyset$
+		- $\bigcup_{X\in S}X=A$
+	- Ex. the relation $=$ on $\mathbb{R}$ is the most **fine-grained** partition of $\mathbb{R}$ possible (the granularity of partitions can of course vary, ex. the subsets of evens and odds is another partition of $\mathbb{R}$)
+- Consider that equivalence relations and partitions are equivalent ways of viewing a given set!
+
+For each $n\in \mathbb{N}$, define the equivalence relation $\equiv_{n}$ on $\mathbb{Z}$ as: $a\equiv_{n}b$ if $a-b\in \mathbb{Z}$...
