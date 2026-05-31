@@ -1,4 +1,47 @@
 # <u>3: Set Theory</u>
-A
+- A set is a collection of **unordered**, **distinct** objects called elements
+- Operators on sets:
+	- $|A|$, returns the size of the set
+	- $x∈A$, returns True when is a **member** of set $A$
+	- $x∉A$, returns True when is **not a member** of set $A$
+	- $A⊆B$, returns True when every element of $A$ is an element of $B$, meaning $A$ is a **subset** of $B$
+		- $A⊆A$, is always True
+		- $∅⊆A$, is always True
+	- $A = B$, returns True when $A⊆B$ and $B⊆A$, so $A$ and $B$ have the exact same elements which defines **set equality**
+	- $A∪B$, returns the set of all elements that are in $A$, or $B$, or both; this is called the **union**
+		- $\{x : x∈A∨x∈B\}$
+		- Note the union is distributive over intersections, $A\cup (B\cap C)=(A\cup B)\cap(A\cup C)$, and commutative and associative with itself
+	- $A∩B$, returns the set of all elements that are in $A$ and $B$, this is called the **intersection**
+		- $\{x : x∈A∧x∈B\}$
+		- Note the intersection is distributive over unions, $A\cap (B\cup C)=(A\cap B)\cup(A\cap C)$, and commutative and associative with itself
+	- $A×B$, returns the set of all ordered pairs of elements in $A$ and $B$, this is called the **Cartesian product**
+		- $\{(a,b) : a∈A∧b∈B\}$
+		- $|A\times B|=|A||B|$, given that the sets are finite
+		- $A\subseteq C\wedge B\subseteq D\implies A\times B\subseteq C\times D$
+		- $\emptyset \times A=A\times \emptyset=\emptyset$
+			- Note the product is **not commutative** otherwise; $A\times B\neq B \times A$ given $A\neq B$
+	- $A\backslash B$, returns the set of all elements that are in $A$ but not $B$, this is called the **set difference**
+		- $\{x : x∈A∧x∉B\}$
+	- $A^c$, returns the set of all elements that are in the universe of discourse but not in $A$; this called the **complement**, which is equivalent to the set difference $U\backslash A$, and thus DeMorgan's Law for sets:
+		- $A^c∩B^c = (A∪B)^c$
+		- $A^c∪B^c = (A∩B)^c$
+		- Note, $A\backslash B=A\cap B^c$
+	- $\mathcal{P}(A)$, returns the **set of all subsets** of $A$ (including $\emptyset$ and $A$), this is called the **power set**
+		- $\{S : S⊆A\}$
+		- $|\mathcal{P}(A)| = 2^{|A|}$
+		- $A\subseteq B \iff \mathcal{P}(A)\subseteq \mathcal{P}(B)$
+- **Collections of sets** can be **indexed** by other sets, ex. sets indexed by $\{ 1,2,3 \}$ would be $\{ A_{n} \}_{n=1}^{3}$
+	- A collection of sets is **pairwise disjoint** if $A_{n}\cap A_{m}=\emptyset$ for all $n\neq m$
+	- We also define unions and intersections over such collections of sets:
+		- $\bigcup_{n\in \mathbb{N}}A_{n}:=\{ a : a\in A_{n}\text{ for some }n\in \mathbb{N}\}$
+		- $\bigcap_{n\in \mathbb{N}}A_{n}:=\{ a : a\in A_{n}\text{ for all }n\in \mathbb{N}\}$
+	- Distributivity applies to these larger unions and intersections as before:
+		- $B\cap(\bigcup_{n\in \mathbb{N}}A_{n})=\bigcup_{n\in \mathbb{N}}(B\cap A_{n})$
+		- $B\cup(\bigcap_{n\in \mathbb{N}}A_{n})=\bigcap_{n\in \mathbb{N}}(B\cup A_{n})$
+	- As does DeMorgan's Law:
+		- $(\bigcap_{n\in \mathbb{N}}A_{n})^c=\bigcup_{n\in \mathbb{N}}A_{n}^c$
+		- $(\bigcup_{n\in \mathbb{N}}A_{n})^c=\bigcap_{n\in \mathbb{N}}A_{n}^c$
+	- **Axiom of Choice:** for any arbitrary indexing set $N$ and every indexed collection of nonempty sets $\{ A_{n} \}_{n\in N}$, there exists an indexed collection of elements $\{ a_{n}\}_{n\in N}$ where $a_{n}\in A_{n}$ for each $n\in N$
+		- This axiom guarantees the existence of mathematical objects that are obtained by a sequence of choices (in both finite or infinite cases)
 # <u>7: Relations and Partitions</u>
 A
