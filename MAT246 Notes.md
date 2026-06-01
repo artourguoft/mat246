@@ -57,7 +57,7 @@ For a relation $R$ on a set $A$, the relation is:
 - **Reflexive**: if $\forall a\in A,aRa$ 
 - **Symmetric:** if $\forall a,b\in A,aRb\implies bRa$
 - **Transitive:** if $\forall a,b,c\in A,aRb\wedge bRc\implies aRc$
-Note, **reflexivity is not defined** for relations between non-equal sets (and thus neither is equivalence; more on this when equivalence relations are introduced)
+Note, **reflexivity is not defined** for relations between non-equal sets (and thus neither is equivalence; more on this just below)
 
 Consider some common examples:
 - $\leq$ on $\mathbb{R}$ is reflexive and transitive, but not symmetric
@@ -81,4 +81,7 @@ Relations that **satisfy all three properties** of reflexivity, symmetry, and tr
 	- Ex. the relation $=$ on $\mathbb{R}$ is the most **fine-grained** partition of $\mathbb{R}$ possible (the granularity of partitions can of course vary, ex. the subsets of evens and odds is another partition of $\mathbb{R}$)
 - Consider that equivalence relations and partitions are equivalent ways of viewing a given set!
 
-For each $n\in \mathbb{N}$, define the equivalence relation $\equiv_{n}$ on $\mathbb{Z}$ as: $a\equiv_{n}b$ if $a-b\in \mathbb{Z}$...
+For each $n\in \mathbb{N}$, define the following equivalence relation $\equiv_{n}$ on $\mathbb{Z}$:
+$$\equiv_{n}:=\{(a,b)\in \mathbb{Z}^2:a-b=kn\text{ for some }k\in \mathbb{Z}\}$$
+This is the **modulo congruence** relation; for $(a,b)\in\equiv_{n}$ we shorthand $a\equiv_{n}b$ meaning that $a$ is congruent to $b$ modulo $n$
+- A
