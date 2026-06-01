@@ -83,5 +83,6 @@ Relations that **satisfy all three properties** of reflexivity, symmetry, and tr
 
 For each $n\in \mathbb{N}$, define the following equivalence relation $\equiv_{n}$ on $\mathbb{Z}$:
 $$\equiv_{n}:=\{(a,b)\in \mathbb{Z}^2:a-b=kn\text{ for some }k\in \mathbb{Z}\}$$
-This is the **modulo congruence** relation; for $(a,b)\in\equiv_{n}$ we shorthand $a\equiv_{n}b$ meaning that $a$ is congruent to $b$ modulo $n$
-- A
+This is the **modulo congruence** relation; for $(a,b)\in\equiv_{n}$ we shorthand $a\equiv_{n}b$ meaning that $a$ is congruent to $b$ modulo $n$, meaning $n$ divides $a-b$
+- We denote the equivalence class of $a$ with respect to $\equiv_{n}$ as $[a]_{n}$; this is called the **congruence class** of $a$ modulo $n$
+- $\forall n\in \mathbb{N},a,b,\in \mathbb{Z},[a]_{n}=[b]_{n}\iff n|(a-b)$, ie. since $n$ divides $a-b$, both are representatives of the same congruence class, and vice versa
